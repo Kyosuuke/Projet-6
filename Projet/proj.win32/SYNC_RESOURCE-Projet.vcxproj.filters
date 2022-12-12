@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="S:\Projet\proj.win32\CMakeFiles\416d0605982ede29ba17b06fe3cbeb9e\SYNC_RESOURCE-Projet.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="S:\Projet\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="S:\Projet\proj.win32\CMakeFiles\SYNC_RESOURCE-Projet" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{05ABB896-5B18-35B6-89F4-71218D7F3089}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
