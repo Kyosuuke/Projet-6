@@ -1,8 +1,8 @@
-# Install script for directory: S:/Test/cocos2d/cocos
+# Install script for directory: X:/lemmings/cocos2d/cocos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Test")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/lemmings")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("S:/Test/proj.win32/engine/external/cmake_install.cmake")
+  include("X:/lemmings/proj.win32/engine/external/cmake_install.cmake")
 
 endif()
 

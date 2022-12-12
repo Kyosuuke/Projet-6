@@ -1,8 +1,8 @@
-# Install script for directory: S:/Test/cocos2d/external/openssl
+# Install script for directory: X:/lemmings/cocos2d/external/openssl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Test")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/lemmings")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

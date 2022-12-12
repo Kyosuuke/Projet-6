@@ -1,8 +1,8 @@
-# Install script for directory: S:/Test
+# Install script for directory: X:/lemmings
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Test")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/lemmings")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("S:/Test/proj.win32/engine/cocos/core/cmake_install.cmake")
+  include("X:/lemmings/proj.win32/engine/cocos/core/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "S:/Test/proj.win32/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "X:/lemmings/proj.win32/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
