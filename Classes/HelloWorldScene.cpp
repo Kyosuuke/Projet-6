@@ -7,6 +7,8 @@ Scene* HelloWorld::createScene()
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setGravity(Vec2(0, -900));
 
+    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
+
     return HelloWorld::create();
 }
 
@@ -103,17 +105,16 @@ bool HelloWorld::init()
     else
     {
         // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+        sprite->setPosition(Vec2(visibleSize.width/3 + origin.x, visibleSize.height/2 + origin.y));
         sprite->addComponent(physicsBody);
         // add the sprite as a child to this layer
         this->addChild(sprite, 4);
     }
 
     auto map = TMXTiledMap::create("Map/Test.tmx");
-    map->getPosition();
-    map->setPositionX(0);
-    map->setPositionY(0);
-    this->addChild(map, 4);
+    this->addChild(map, 3);
+
+    auto spritepos = sprite->getPosition();
 
     return true;
 }

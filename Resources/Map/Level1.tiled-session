@@ -20,11 +20,11 @@
             "scaleInEditor": 1
         },
         "Test.tmx": {
-            "scale": 1,
-            "selectedLayer": 0,
+            "scale": 0.75,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 425,
-                "y": 466
+                "x": 427.99999999999994,
+                "y": 492
             }
         }
     },
@@ -38,10 +38,11 @@
     "map.tileWidth": 16,
     "map.width": 64,
     "openFiles": [
-        "Test.tmx",
-        "Assets.tsx"
+        "Assets.tsx",
+        "Test.tmx"
     ],
     "project": "Level1.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
         "Assets.tsx",
         "Test.tmx",

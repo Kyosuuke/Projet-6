@@ -900,6 +900,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Image Include="..\Resources\bg\GrassLand_Cloud_2.png" />
     <Image Include="C:\Users\Cli59\Downloads\pngegg.png" />
     <Image Include="C:\Users\Cli59\Downloads\Test.jpg" />
+    <Image Include="C:\Users\Cli59\Lemmingsproj\lemmings\Resources\MenuBack.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -37,13 +37,15 @@ bool StartMenu::init()
 	}
 
 	// Background
-	auto bg1 = Sprite::create("Test.jpg");
+	auto bg1 = Sprite::create("MenuBack.png");
 	float scale = MAX(visibleSize.width / bg1->getContentSize().width, visibleSize.height / bg1->getContentSize().height);
 	bg1->setScale(scale);
 	bg1->getContentSize().height;
 	bg1->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
 
 	this->addChild(bg1, 0);
+
+	// Title
 
 	auto label = Label::createWithTTF("Les Mings", "fonts/Marker Felt.ttf", 70);
 
@@ -80,7 +82,6 @@ bool StartMenu::init()
 	auto menu1 = Menu::create(changeFont, NULL);
 	menu1->setPosition(Vec2::ZERO);
 	this->addChild(menu1, 4);
-
 
 	auto settings = MenuItemFont::create("Settings", CC_CALLBACK_1(StartMenu::menuSettings, this));
 
