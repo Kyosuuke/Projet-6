@@ -4,6 +4,9 @@ USING_NS_CC;
 
 Scene* HelloWorld::createScene()
 {
+    auto scene = Scene::createWithPhysics();
+    scene->getPhysicsWorld()->setGravity(Vec2(0, -900));
+
     return HelloWorld::create();
 }
 
@@ -80,9 +83,19 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
+    /////////////////////////////
+    // 3. add your codes below...
+
+    // add a label shows "Hello World"
+    // create and initialize a label
+
+
     // add "HelloWorld" splash screen"
     auto sprite = Sprite::create("Sprite/Knight1.png");
     auto myNode = Node::create();
+
+    auto physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f), PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    physicsBody->setDynamic(true);
     if (sprite == nullptr)
     {
         problemLoading("'HelloWorld.png'");
@@ -91,7 +104,7 @@ bool HelloWorld::init()
     {
         // position the sprite on the center of the screen
         sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
+        sprite->addComponent(physicsBody);
         // add the sprite as a child to this layer
         this->addChild(sprite, 4);
     }
