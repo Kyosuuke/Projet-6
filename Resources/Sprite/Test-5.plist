@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Knight3.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>anchor</key>
+                <string>{0.5,0.5}</string>
+                <key>spriteOffset</key>
+                <string>{0,-16.5}</string>
+                <key>spriteSize</key>
+                <string>{20,30}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,63}</string>
+                <key>textureRect</key>
+                <string>{{0,0},{20,30}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>42 63 22 63 22 33 42 33</string>
+                <key>verticesUV</key>
+                <string>20 30 0 30 0 0 20 0</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>Test-5.png</string>
+            <key>size</key>
+            <string>{20,30}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:7de3aee38c0c41616bcb08e3bb8c2a10:2e6056c32c90de13cc3af2ce4643154d:6b4b2a6c40eedffe0650ac815f15733b$</string>
+            <key>textureFileName</key>
+            <string>Test-5.png</string>
+        </dict>
+    </dict>
+</plist>

@@ -896,8 +896,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <Image Include="..\Resources\bg\bg1.png" />
     <Image Include="..\Resources\bg\bg2.png" />
-    <Image Include="..\Resources\bg\bg3.png" />
-    <Image Include="..\Resources\bg\bg4.png" />
     <Image Include="..\Resources\bg\GrassLand_Cloud_1.png" />
     <Image Include="..\Resources\bg\GrassLand_Cloud_2.png" />
     <Image Include="C:\Users\Cli59\Downloads\pngegg.png" />

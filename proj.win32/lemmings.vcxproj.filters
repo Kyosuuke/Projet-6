@@ -99,22 +99,16 @@
     <Image Include="C:\Users\Cli59\Downloads\Test.jpg">
       <Filter>Resources</Filter>
     </Image>
-    <Image Include="..\Resources\bg\bg1.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\Resources\bg\bg2.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\Resources\bg\bg3.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="..\Resources\bg\bg4.png">
-      <Filter>Resources</Filter>
-    </Image>
     <Image Include="..\Resources\bg\GrassLand_Cloud_1.png">
       <Filter>Resources</Filter>
     </Image>
     <Image Include="..\Resources\bg\GrassLand_Cloud_2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\bg\bg1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\bg\bg2.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

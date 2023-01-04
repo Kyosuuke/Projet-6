@@ -27,7 +27,7 @@ bool StartMenu::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	// Background music
-	
+
 	auto musicVol = 1.0f;
 	auto gameAudioProfile = AudioEngine::INVALID_AUDIO_ID;
 
@@ -57,7 +57,7 @@ bool StartMenu::init()
 	else
 	{
 		label->setPosition(Vec2(origin.x + visibleSize.width * 0.5,
-								origin.y + visibleSize.height * 0.8 - label->getContentSize().height));
+			origin.y + visibleSize.height * 0.8 - label->getContentSize().height));
 	}
 
 	this->addChild(label, 1);
@@ -74,7 +74,7 @@ bool StartMenu::init()
 	else
 	{
 		changeFont->setPosition(Vec2(origin.x + visibleSize.width / 2,
-		origin.y + visibleSize.height * 0.5 - changeFont->getContentSize().height));
+			origin.y + visibleSize.height * 0.5 - changeFont->getContentSize().height));
 	}
 
 	auto menu1 = Menu::create(changeFont, NULL);
@@ -94,14 +94,14 @@ bool StartMenu::init()
 	else
 	{
 		settings->setPosition(Vec2(origin.x + visibleSize.width * 0.5,
-		origin.y + visibleSize.height * 0.4 - settings->getContentSize().height));
+			origin.y + visibleSize.height * 0.4 - settings->getContentSize().height));
 	}
 
 	auto menu2 = Menu::create(settings, NULL);
 	menu2->setPosition(Vec2::ZERO);
 	this->addChild(menu2, 4);
 
-	auto quit = MenuItemFont::create("Quit", CC_CALLBACK_1(StartMenu::menuCloseCallback,this));
+	auto quit = MenuItemFont::create("Quit", CC_CALLBACK_1(StartMenu::menuCloseCallback, this));
 
 	if (quit == nullptr ||
 		quit->getContentSize().width <= 0 ||
@@ -113,19 +113,19 @@ bool StartMenu::init()
 	else
 	{
 		quit->setPosition(Vec2(origin.x + visibleSize.width * 0.5,
-		origin.y + visibleSize.height * 0.3 - quit->getContentSize().height));
+			origin.y + visibleSize.height * 0.3 - quit->getContentSize().height));
 	}
 
 	auto menu3 = Menu::create(quit, NULL);
 	menu3->setPosition(Vec2::ZERO);
 	this->addChild(menu3, 4);
-	
+
 }
 
 void StartMenu::menuChangeScene(Ref* pSender)
 {
 	auto scene = HelloWorld::createScene();
-	Director::getInstance()->replaceScene(TransitionFade::create(0.5,scene, Color3B(0,0,0)));
+	Director::getInstance()->replaceScene(TransitionFade::create(0.5, scene, Color3B(0, 0, 0)));
 }
 
 void StartMenu::menuSettings(Ref* pSender)

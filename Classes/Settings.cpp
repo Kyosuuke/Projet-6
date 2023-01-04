@@ -88,6 +88,8 @@ bool Settings::init()
 void Settings::menuBack(Ref* pSender)
 {
 	auto mainMenu = StartMenu::createScene();
+	auto gameAudioProfile = AudioEngine::play2d("Music/Vagabond.mp3", true);
 	Director::getInstance()->replaceScene(TransitionFade::create(0.5, mainMenu, Color3B(0, 0, 0)));
+	AudioEngine::stopAll();
 }
 

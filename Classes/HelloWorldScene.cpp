@@ -19,13 +19,17 @@ bool HelloWorld::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Scene::init() )
+    if ( !Scene::initWithPhysics() )
     {
         return false;
     }
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    auto lemsbody = PhysicsBody::createBox(Size(16.0f, 16.0f),
+                    PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    lemsbody->setDynamic(false);
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
@@ -34,7 +38,7 @@ bool HelloWorld::init()
     // add a "close" icon to exit the progress. it's an autorelease object
 
 
-    auto bg1 = Sprite::create("bg/bg1.png");
+    auto bg1 = Sprite::create("bg1.png");
     float scale1 = MAX(visibleSize.width / bg1->getContentSize().width, visibleSize.height / bg1->getContentSize().height);
     bg1->setScale(scale1);
     bg1->getContentSize().height;
@@ -42,7 +46,7 @@ bool HelloWorld::init()
 
     this->addChild(bg1, 0);
 
-    auto bg2 = Sprite::create("bg/bg2.png");
+    auto bg2 = Sprite::create("bg2.png");
     float scale2 = MAX(visibleSize.width / bg2->getContentSize().width, visibleSize.height / bg2->getContentSize().height);
     bg2->setScale(scale2);
     bg2->getContentSize().height;
@@ -50,21 +54,8 @@ bool HelloWorld::init()
 
     this->addChild(bg2, 1);
 
-    auto bg3 = Sprite::create("bg/bg3.png");
-    float scale3 = MAX(visibleSize.width / bg3->getContentSize().width, visibleSize.height / bg3->getContentSize().height);
-    bg3->setScale(scale3);
-    bg3->getContentSize().height;
-    bg3->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
 
-    this->addChild(bg3, 2);
-
-    auto bg4 = Sprite::create("bg/bg4.png");
-    float scale4 = MAX(visibleSize.width / bg4->getContentSize().width, visibleSize.height / bg4->getContentSize().height);
-    bg4->setScale(scale4);
-    bg4->getContentSize().height;
-    bg4->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
-
-    this->addChild(bg4, 3);
+    /*Animation::addSpriteFrameWithFile("Sprite/Test-0.png");*/
 
     auto closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
@@ -89,45 +80,8 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-    if (label == nullptr)
-    {
-        problemLoading("'fonts/Marker Felt.ttf'");
-    }
-
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                                origin.y + visibleSize.height - label->getContentSize().height));
-
-        // add the label as a child to this layer
-        this->addChild(label, 1);
-    }
-
-    auto test = Label::createWithTTF("Test", "fonts/Marker Felt.ttf", 24);
-    if (test == nullptr)
-    {
-        problemLoading("'fonts/Marker Felt.tff");
-    }
-
-    else
-    {
-        test->setPosition(Vec2(origin.x + visibleSize.width/4,
-            origin.y + visibleSize.height - test->getContentSize().height));
-
-        this->addChild(test, 1);
-    }
-
-
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
+    auto sprite = Sprite::create("Sprite/Knight1.png");
     auto myNode = Node::create();
     if (sprite == nullptr)
     {
@@ -141,10 +95,14 @@ bool HelloWorld::init()
         // add the sprite as a child to this layer
         this->addChild(sprite, 4);
     }
+
+    auto map = TMXTiledMap::create("Map/Test.tmx");
+    map->getPosition();
+    map->setPositionX(0);
+    map->setPositionY(0);
+    this->addChild(map, 4);
+
     return true;
-    
-    auto map = TMXTiledMap::create("Map/TestMap.tmx");
-    this->addChild(map, 4, 99);
 }
 
 
