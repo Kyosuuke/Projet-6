@@ -30,7 +30,6 @@ bool lemmings::init() {
     {
         // position the sprite on the center of the screen
         sprite->setPosition(Vec2(visibleSize.width / 3 + origin.x, visibleSize.height / 2 + origin.y));
-        //sprite->setPosition(50, 50);
         sprite->addComponent(physicsBody);
 
         scheduleUpdate();

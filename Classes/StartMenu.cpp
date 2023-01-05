@@ -28,7 +28,7 @@ bool StartMenu::init()
 
 	// Background music
 
-	auto musicVol = 1.0f;
+	auto musicVol = 0.1f;
 	auto gameAudioProfile = AudioEngine::INVALID_AUDIO_ID;
 
 	if (gameAudioProfile == AudioEngine::INVALID_AUDIO_ID)

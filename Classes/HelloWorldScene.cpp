@@ -8,7 +8,9 @@ Scene* HelloWorld::createScene()
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setGravity(Vec2(0, -900));
 
-    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
+    //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
+    scene->getPhysicsWorld()->setDebugDrawMask(0xffff);
+
 
     return HelloWorld::create();
 }
@@ -29,7 +31,6 @@ bool HelloWorld::init()
     {
         return false;
     }
-
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -120,14 +121,15 @@ bool HelloWorld::init()
     this->addChild(map, 3);
 
     //map colide
+
+    //floor
     auto edgeNode = Node::create();
-
     auto edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
-
     edgeNode->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     edgeNode->setPhysicsBody(edgeBody);
-
     this->addChild(edgeNode);
+
+    //mid
 
     return true;
 }
