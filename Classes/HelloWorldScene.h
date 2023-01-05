@@ -26,6 +26,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "lemmings.h"
 
 class HelloWorld : public cocos2d::Scene
 {
@@ -33,9 +34,14 @@ public:
     static cocos2d::Scene* createScene();
 
     virtual bool init();
+    virtual void update(float dt);
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+
+    lemmings* lemming;
+    int numberLemmings = 5;
+    int frameSpawn = 0;
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);

@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "lemmings.h"
 
 USING_NS_CC;
 
@@ -85,38 +86,74 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
 
-    // add a label shows "Hello World"
-    // create and initialize a label
+    //auto sprite test
+    /*auto spritetest = DrawNode::create();
+    Vec2 rectangle[4];
+    rectangle[0] = Vec2(-50, -50);
+    rectangle[1] = Vec2(50, -50);
+    rectangle[2] = Vec2(50, 50);
+    rectangle[3] = Vec2(-50, 50);
 
+    Color4F red(1, 255, 0, 1);
 
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("Sprite/Knight1.png");
-    auto myNode = Node::create();
+    spritetest->drawPolygon(rectangle, 4, red, 1, red);
+    this->addChild(spritetest, 5);
+    auto eventListener = EventListenerKeyboard::create();
+    eventListener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event) {
+        Vec2 loc = event->getCurrentTarget()->getPosition();
+        switch (keyCode)
+        {
+        case EventKeyboard::KeyCode::KEY_Q:
+            event->getCurrentTarget()->setOpacity(100);
+            break;
+        }
+        return true;
+    };
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(eventListener, spritetest);*/
 
-    auto physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f), PhysicsMaterial(0.1f, 1.0f, 0.0f));
-    physicsBody->setDynamic(true);
-    if (sprite == nullptr)
-    {
-        problemLoading("'HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/3 + origin.x, visibleSize.height/2 + origin.y));
-        sprite->addComponent(physicsBody);
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 4);
-    }
+    //spawn lemmings
+    scheduleUpdate();
 
+    //map part
     auto map = TMXTiledMap::create("Map/Test.tmx");
     this->addChild(map, 3);
 
-    auto spritepos = sprite->getPosition();
+    //map colide
+    auto edgeNode = Node::create();
+
+    auto edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
+
+    edgeNode->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    edgeNode->setPhysicsBody(edgeBody);
+
+    this->addChild(edgeNode);
 
     return true;
+}
+
+void HelloWorld::update(float dt) {
+
+
+    if (this->numberLemmings == 5) {
+        this->lemming = lemmings::create();
+        addChild(lemming, 4);
+
+        this->numberLemmings--;
+        
+    }
+    else if (this->numberLemmings >= 1 && frameSpawn >= 60) {
+        this->lemming = lemmings::create();
+        addChild(lemming, 4);
+
+        this->numberLemmings--;
+    }
+    if ( frameSpawn == 60) {
+        frameSpawn = 0;
+    }
+    
+    this->frameSpawn++;
+    
 }
 
 

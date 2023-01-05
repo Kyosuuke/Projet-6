@@ -64,7 +64,7 @@ bool StartMenu::init()
 
 	this->addChild(label, 1);
 
-	auto changeFont = MenuItemFont::create("Level Choice", CC_CALLBACK_1(StartMenu::menuChangeScene, this));
+	auto changeFont = MenuItemFont::create("Start", CC_CALLBACK_1(StartMenu::menuChangeScene, this));
 
 	if (changeFont == nullptr ||
 		changeFont->getContentSize().width <= 0 ||
