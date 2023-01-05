@@ -8,8 +8,8 @@ Scene* HelloWorld::createScene()
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setGravity(Vec2(0, -900));
 
-    //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
-    scene->getPhysicsWorld()->setDebugDrawMask(0xffff);
+    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
+    //scene->getPhysicsWorld()->setDebugDrawMask(0xffff);
 
 
     return HelloWorld::create();
@@ -123,11 +123,14 @@ bool HelloWorld::init()
     //map colide
 
     //floor
-    auto edgeNode = Node::create();
+   
     auto edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
+    auto edgeNode = Node::create();
     edgeNode->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     edgeNode->setPhysicsBody(edgeBody);
     this->addChild(edgeNode);
+    edgeNode->getPhysicsBody()->setCategoryBitmask(0x03);    // 0011
+    edgeNode->getPhysicsBody()->setCollisionBitmask(0x03);
 
     //mid
 

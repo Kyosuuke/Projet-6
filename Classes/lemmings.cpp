@@ -19,7 +19,7 @@ bool lemmings::init() {
     auto sprite = Sprite::create("Sprite/Knight1.png");
     auto myNode = Node::create();
 
-    auto physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f), PhysicsMaterial(0.1f, 0.0f, 1.0f));
+    auto physicsBody = PhysicsBody::createBox(Size(25.0f, 50.0f), PhysicsMaterial(0.1f, 0.0f, 1.0f));
     physicsBody->setDynamic(true);
 
     if (sprite == nullptr)
@@ -51,8 +51,8 @@ void lemmings::update(float dt){
         this->setPositionX(this->getPositionX() + 0);
         stateLemmings = true;
     }
-    else if (stateLemmings == true && frameSpawn >= 60) {
-        this->setPositionX(this->getPositionX() + 15*dt);
+    else if (stateLemmings == true && frameSpawn >= 120) {
+        this->setPositionX(this->getPositionX() + 30*dt);
     }
 
     frameSpawn++;
